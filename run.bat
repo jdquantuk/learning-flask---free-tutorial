@@ -1,0 +1,1 @@
+"C:\Users\jeand\Desktop\flask - risk quant\flask\python.exe" "C:\Users\jeand\Desktop\flask - risk quant\run.py"

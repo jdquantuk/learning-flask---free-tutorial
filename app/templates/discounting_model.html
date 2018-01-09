@@ -1,0 +1,83 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+<h3 class="page-header"><i class="fa fa-laptop"></i> Reassessment: Discounting Model</h3>
+<ol class="breadcrumb">
+  <li><i class="fa fa-home"></i><a href="/index">Home</a></li>
+  <li><i class="fa fa-laptop"></i>Reassessment: Discounting Model </li>
+</ol>
+
+<!-- Input and Filters-->
+<form action="" method="post">
+	<div class="row">
+	  <div class="col-lg-6">
+		<section class="panel">
+		  <header class="panel-heading">
+			View parameters
+		  </header>
+		  <div class="panel-body">
+			<form class="form-inline" role="form">
+			
+				<div class="form-group">
+				<label class="control-label col-lg-3">Choose date:</label>
+					<div class="col-lg-3">
+					  <input id="cp1" type="text" value="01/01/2018" size="12" class="form-control input-sm m-bot15">
+					</div>
+				</div><br><br>
+		  		  
+				  <div class="form-group">
+					<label class="control-label col-lg-3">Row level 1: </label>
+					<div class="col-lg-3">
+					  <select class="form-control input-sm m-bot15" id="level1" name="level1" >
+											  <option value="{{default_level_1}}">{{default_level_1}}</option>
+											  <option value="Book">Book</option>										  
+											  <option value="Portfolio">Portfolio</option>
+											  <option value="Product">Product</option>
+											  <option value="Deal/Security">Deal/Security</option>
+						</select>
+					</div>
+				</div><br><br>
+				  <div class="form-group">
+					<label class="control-label col-lg-3">Row level 2:</label>
+					<div class="col-lg-3">
+					  <select class="form-control input-sm m-bot15" id="level2", name="level2">
+											  <option value="{{default_level_2}}">{{default_level_2}}</option>
+											  <option value="Book">Book</option>
+											  <option value="Portfolio">Portfolio</option>
+											  <option value="Product">Product</option>
+											  <option value="Deal/Security">Deal/Security</option>
+					</select>
+					</div>
+				</div><br><br>
+				  <button type="submit" class="btn btn-primary">Refresh</button>
+			</form>
+
+		  </div>
+		</section>
+
+	  </div>
+	</div>
+</form>		
+
+<!-- Table-->
+<div class="row">
+  <div class="col-lg-6">
+	<section class="panel">
+	  <header class="panel-heading">
+		Table: Positions
+	  </header>
+	  <div class="panel-body">
+		{{table|safe}}
+
+	  </div>
+	</section>
+
+  </div>
+</div>
+
+		
+
+
+{% endblock %}

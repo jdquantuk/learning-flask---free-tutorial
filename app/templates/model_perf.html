@@ -1,0 +1,177 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+
+<h3 class="page-header"><i class="fa fa-laptop"></i> Model Performance Monitoring</h3>
+<ol class="breadcrumb">
+  <li><i class="fa fa-home"></i><a href="/index">Home</a></li>
+  <li><i class="fa fa-laptop"></i>Model Performance Monitoring </li>
+</ol>
+
+	<head>
+		<title>Line Chart</title>
+		<script src="../static/bootstrap/assets/chart-master/Chart.js"></script>
+		<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+		<style>
+			canvas{
+			}
+		</style>
+	</head>
+	<body>
+		
+
+		  <div class="panel-body">
+			<form class="form-inline" role="form">	  		  
+				  <div class="form-group">
+					<!--<label class="control-label col-lg-6">Model Perf ID: </label>-->
+					<div class="col-lg-12">
+					  <select class="form-control input-sm m-bot15" id="perf_list" name="perf_list" onchange="location = this.value;">
+											  <option value="">--Choose Model Perf--</option>
+											  <!--
+											  <option value="/model_perf/perf_001">perf_001</option>
+											  <option value="/model_perf/perf_002">perf_002</option>	
+											  -->
+												{% for x in list_model_perf %}
+												<option value="/model_perf/{{x}}">{{x}} </option>
+												{% endfor %}											  
+						</select>
+					</div>
+				</div>
+			</form>
+
+		  </div>
+
+
+
+		<!--<canvas id="pie-chart" width="800" height="450"></canvas>-->
+		  
+		<!-- Line -->
+		<div class="col-lg-8">
+		  <section class="panel">
+			  <header class="panel-heading">
+				  Model Performance id: {{m_perf_id}}
+			  </header>
+			  <div class="panel-body text-center">
+				  <!--<canvas id="canvas" height="450" width="600"></canvas>-->
+				 <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+				 <div id="mybarchart"><!-- Plotly chart will be drawn inside this DIV --></div>				 
+			  </div>
+		  </section>
+		</div>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
+  <script>
+var trace1 = {
+  x: {{ mylist|tojson }},
+  y: {{ mydata_1|tojson }},
+  mode: 'lines+markers',
+  name: 'metric'
+};
+
+var trace2 = {
+  x: {{ mylist|tojson }},
+  y: {{ mydata_2|tojson }},
+  mode: 'lines+markers',
+  name: 'threshold'
+};
+
+
+var data = [ trace1, trace2 ];
+
+var layout = {
+  title:'Historical model performance monitoring'
+};
+
+Plotly.newPlot('myDiv', data, layout);
+
+
+
+
+
+
+
+
+var barchart_trace1 = {
+  x: {{ mylist|tojson }},
+  y: {{ mydata_1|tojson }},
+  name: 'metric',
+  marker: {color: 'rgb(55, 83, 109)'},
+  type: 'bar'
+};
+
+var barchart_trace2 = {
+  x: {{ mylist|tojson }},
+  y: {{ mydata_2|tojson }},
+  name: 'threshold',
+  marker: {color: 'rgb(26, 118, 255)'},
+  type: 'bar'
+};
+
+var barchart_data = [barchart_trace1, barchart_trace2];
+
+var barchart_layout = {
+  title: 'Historical Model Perf - BarChart',
+  xaxis: {tickfont: {
+      size: 14,
+      color: 'rgb(107, 107, 107)'
+    }},
+  yaxis: {
+    title: 'Value',
+    titlefont: {
+      size: 16,
+      color: 'rgb(107, 107, 107)'
+    },
+    tickfont: {
+      size: 14,
+      color: 'rgb(107, 107, 107)'
+    }
+  },
+  legend: {
+    x: 0,
+    y: 1.1,
+    bgcolor: 'rgba(255, 255, 255, 0)',
+    bordercolor: 'rgba(255, 255, 255, 0)'
+  },
+  barmode: 'group',
+  bargap: 0.15,
+  bargroupgap: 0.1
+};
+
+Plotly.newPlot('mybarchart', barchart_data, barchart_layout);
+  </script>
+  
+  
+	<script>
+		var lineChartData = {
+			labels : {{ mylist|tojson }},
+			datasets : [
+				{
+					fillColor : "rgba(151,187,205,0.5)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					data : {{ mydata_1|tojson }}
+
+				},
+				{
+
+					fillColor : "rgba(220,220,220,0.5)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",					
+					pointStrokeColor : "#fff",
+					data : {{ mydata_2|tojson }}
+				}				
+			]
+			
+		}
+	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+	
+
+	
+
+	
+	</script>
+	</body>
+{% endblock %}

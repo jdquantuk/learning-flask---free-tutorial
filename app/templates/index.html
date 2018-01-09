@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+  <meta name="author" content="GeeksLabs">
+  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+  <title>RISK GM Quant Dashboard</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap theme -->
+  <link href="../static/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="../static/bootstrap/css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="../static/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- full calendar css-->
+  <link href="../static/bootstrap/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+  <link href="../static/bootstrap/assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+  <!-- easy pie chart-->
+  <link href="../static/bootstrap/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-- owl carousel -->
+  <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+  <link href="../static/bootstrap/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/fullcalendar.css">
+  <link href="../static/bootstrap/css/widgets.css" rel="stylesheet">
+  <link href="../static/bootstrap/css/style.css" rel="stylesheet">
+  <link href="../static/bootstrap/css/style-responsive.css" rel="stylesheet" />
+  <link href="../static/bootstrap/css/xcharts.min.css" rel=" stylesheet">
+  <link href="../static/bootstrap/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: NiceAdmin
+    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <!-- container section start -->
+  <section id="container" class="">
+
+
+    <header class="header dark-bg">
+      <div class="toggle-nav">
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+      </div>
+
+      <!--logo start-->
+      <a href="index.html" class="logo">RISK GM <span class="lite">Quant</span></a>
+      <!--logo end-->
+
+      <div class="nav search-row" id="top_menu">
+        <!--  search form start -->
+        <ul class="nav top-menu">
+          <li>
+            <form class="navbar-form">
+              <input class="form-control" placeholder="Search" type="text">
+            </form>
+          </li>
+        </ul>
+        <!--  search form end -->
+      </div>
+
+
+          </li>
+          <!-- user login dropdown end -->
+        </ul>
+        <!-- notificatoin dropdown end-->
+      </div>
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a class="" href="/index">
+                          <i class="icon_house_alt"></i>
+                          <span style="font-size: 0.75em;">Home</span>
+                      </a>
+          </li>
+          <li class="sub-menu">
+            <a href="/model_perf/perf_001" class="">
+                          <i class="icon_loading"></i>
+                          <span style="font-size: 0.75em;">Model Perf monitoring</span>
+                      </a>
+          </li>		  
+
+          <li class="sub-menu">
+            <a href="/vol_surface" class="">
+                          <i class="fa fa-bullseye"></i>
+                          <span style="font-size: 0.75em;">Vol Surface</span>
+                      </a>
+          </li>	
+
+		  
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_pencil-edit"></i>
+                          <span style="font-size: 0.75em;">Reassessments</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="/reassessment_discounting_model" style="font-size: 0.75em;">Discounting Model</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_desktop"></i>
+                          <span style="font-size: 0.75em;">Reserves</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="/under_construction" style="font-size: 0.75em;">Model 8</a></li>
+
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span style="font-size: 0.75em;">Analysis tools</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="form_component.html" style="font-size: 0.75em;">PDL extraction</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <!--overview start-->
+        <div class="row">
+          <div class="col-lg-12">
+			{% block content %}{% endblock %}
+          </div>
+        </div>
+      </section>
+
+      </div>
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+  <!-- javascripts -->
+  <script src="../static/bootstrap/js/jquery.js"></script>
+  <script src="../static/bootstrap/js/jquery-ui-1.10.4.min.js"></script>
+  <script src="../static/bootstrap/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../static/bootstrap/js/jquery-ui-1.9.2.custom.min.js"></script> 
+  <!-- bootstrap -->
+  <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+  <!-- nice scroll -->
+  <script src="../static/bootstrap/js/jquery.scrollTo.min.js"></script>
+  <script src="../static/bootstrap/js/jquery.nicescroll.js" type="text/javascript"></script>
+  <!-- charts scripts -->
+  <script src="../static/bootstrap/assets/jquery-knob/js/jquery.knob.js"></script>
+  <script src="../static/bootstrap/js/jquery.sparkline.js" type="text/javascript"></script>
+  <script src="../static/bootstrap/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+  <script src="../static/bootstrap/js/owl.carousel.js"></script>
+  <!-- jQuery full calendar -->
+  <<script src="../static/bootstrap/js/fullcalendar.min.js"></script>
+    <!-- Full Google Calendar - Calendar -->
+    <script src="../static/bootstrap/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+    <!--script for this page only-->
+    <script src="../static/bootstrap/js/calendar-custom.js"></script>
+    <script src="../static/bootstrap/js/jquery.rateit.min.js"></script>
+    <!-- custom select -->
+    <script src="../static/bootstrap/js/jquery.customSelect.min.js"></script>
+    <script src="../static/bootstrap/assets/chart-master/Chart.js"></script>
+
+    <!--custome script for all page-->
+    <script src="../static/bootstrap/js/scripts.js"></script>
+    <!-- custom script for this page-->
+    <script src="../static/bootstrap/js/sparkline-chart.js"></script>
+    <script src="../static/bootstrap/js/easy-pie-chart.js"></script>
+    <script src="../static/bootstrap/js/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="../static/bootstrap/js/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="../static/bootstrap/js/xcharts.min.js"></script>
+    <script src="../static/bootstrap/js/jquery.autosize.min.js"></script>
+    <script src="../static/bootstrap/js/jquery.placeholder.min.js"></script>
+    <script src="../static/bootstrap/js/gdp-data.js"></script>
+    <script src="../static/bootstrap/js/morris.min.js"></script>
+    <script src="../static/bootstrap/js/sparklines.js"></script>
+    <script src="../static/bootstrap/js/charts.js"></script>
+    <script src="../static/bootstrap/js/jquery.slimscroll.min.js"></script>
+    <script>
+      //knob
+      $(function() {
+        $(".knob").knob({
+          'draw': function() {
+            $(this.i).val(this.cv + '%')
+          }
+        })
+      });
+
+      //carousel
+      $(document).ready(function() {
+        $("#owl-slider").owlCarousel({
+          navigation: true,
+          slideSpeed: 300,
+          paginationSpeed: 400,
+          singleItem: true
+
+        });
+      });
+
+      //custom select box
+
+      $(function() {
+        $('select.styled').customSelect();
+      });
+
+      /* ---------- Map ---------- */
+      $(function() {
+        $('#map').vectorMap({
+          map: 'world_mill_en',
+          series: {
+            regions: [{
+              values: gdpData,
+              scale: ['#000', '#000'],
+              normalizeFunction: 'polynomial'
+            }]
+          },
+          backgroundColor: '#eef3f7',
+          onLabelShow: function(e, el, code) {
+            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+          }
+        });
+      });
+    </script>
+
+</body>
+
+</html>

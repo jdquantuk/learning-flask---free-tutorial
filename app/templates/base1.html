@@ -1,0 +1,101 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+
+<!-- Input and Filters-->
+<form action="" method="post">
+	<div class="row">
+	  <div class="col-lg-6">
+		<section class="panel">
+		  <header class="panel-heading">
+			Date and table row levels
+		  </header>
+		  <div class="panel-body">
+			<form class="form-inline" role="form">
+			
+				<div class="form-group">
+				<label class="control-label col-lg-3">Choose date:</label>
+					<div class="col-lg-3">
+					  <input id="cp1" type="text" value="01/01/2018" size="12" class="form-control input-sm m-bot15">
+					</div>
+				</div><br><br>
+		  		  
+				  <div class="form-group">
+					<label class="control-label col-lg-3">Row level 1: </label>
+					<div class="col-lg-3">
+					  <select class="form-control input-sm m-bot15" id="level1" name="level1" >
+											  <option value="{{default_level_1}}">{{default_level_1}}</option>
+											  <option value="Book">Book</option>										  
+											  <option value="Portfolio">Portfolio</option>
+											  <option value="Product">Product</option>
+											  <option value="Deal/Security">Deal/Security</option>
+						</select>
+					</div>
+				</div><br><br>
+				  <div class="form-group">
+					<label class="control-label col-lg-3">Row level 2:</label>
+					<div class="col-lg-3">
+					  <select class="form-control input-sm m-bot15" id="level2", name="level2">
+											  <option value="{{default_level_2}}">{{default_level_2}}</option>
+											  <option value="Book">Book</option>
+											  <option value="Portfolio">Portfolio</option>
+											  <option value="Product">Product</option>
+											  <option value="Deal/Security">Deal/Security</option>
+					</select>
+					</div>
+				</div><br><br>
+				  <button type="submit" class="btn btn-primary">Refresh</button>
+			</form>
+
+		  </div>
+		</section>
+
+	  </div>
+	</div>
+</form>		
+
+<!-- Table-->
+<div class="row">
+  <div class="col-lg-6">
+	<section class="panel">
+	  <header class="panel-heading">
+		Table
+	  </header>
+	  <div class="panel-body">
+		{{table|safe}}
+
+		
+
+
+
+
+	  </div>
+
+	</section>
+	
+	
+
+
+
+  </div>
+  
+
+
+
+</div>
+
+
+	
+	
+<script>
+$('.header').click(function(){
+   $(this).find('span').text(function(_, value){return value=='-'?'+':'-'});
+    $(this).nextUntil('tr.header').slideToggle(100, function(){
+    });
+});
+</script>
+
+{% endblock %}
